@@ -1,0 +1,12 @@
+//Esse arquivo apresenta o modelo de saída esperado no programa.
+//Os resultados descritos são referentes ao que foi apresentado no
+//arquivo de modelo de entrada.
+//C significa consoante; V significa volgal; N significa números
+
+C=3;V=0;N=0
+C=2;V=0;N=1
+C=1;V=2;N=2
+erro
+
+//Cada saída deverá ser impressa em uma linha. Note que uma impressão errada, poderá causar
+//um efeito cascata nos arquivo final, prejudicando sua avaliação.
