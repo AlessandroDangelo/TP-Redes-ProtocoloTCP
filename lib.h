@@ -2,26 +2,31 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct Servidor{
+
+typedef struct servidor Servidor;
+typedef struct cliente Cliente;
+typedef struct mensagem Mensagem;
+
+struct servidor{
 	int passivo;
-	vector Clientes;
+	Cliente Clientes;
 	int num_solicitacoes;
-	string mensagem;
+	char mensagem;
 };
 
-typedef struct Cliente{
+struct cliente{
 	int passivo;
-	string nome;
+	char nome;
 	int solicitacoes;
 	Mensagem mensagem;
 };
 
-typedef struct Mensagem{
-	string mensagem;
+struct mensagem{
+	char mensagem;
 	int consoante;
 	int vogais;
 	int Numeros;
-};
+}
 
 //-------------------------------------------------- Servidor ----------------------------------------------------------
 
