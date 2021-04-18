@@ -10,24 +10,11 @@ int main(int argc, char **argv){
     int quantidade_clientes;
 
 	// Argumento passado na linha de comando
-	//quantidade_clientes = atoi(argv[1]);
-
-    //CriarArquivoEntrada(1);
-
-    cout << "---------------------------------------------------------------\n";   
+	quantidade_clientes = atoi(argv[1]);
     
-    vector <Mensagem> mensagem; //= LerArquivo();
+    menu(quantidade_clientes);
 
-    cout << "---------------------------------------------------------------\n";
-    CriarArquivoSaida(mensagem);
-
-	//menu(quantidade_clientes);
-
-
-
-    //for(int i = 0; i < 20; i++){
-    //    quantidade_clientes = (48 + (rand() % 75));
-    //    cout << quantidade_clientes << endl;
-    //}
+    
     return 0;
 }
+

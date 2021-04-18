@@ -1,7 +1,57 @@
 #include "lib.hpp"
 
-/*void menu(int quantidade_clientes){
+void menu(int quantidade_clientes){
 
+    FILE* arquivo_saida;
+    CriarArquivoEntrada(quantidade_clientes);
+  
+    
+    vector <Mensagem> mensagem;
+
+    char nome[14];
+    char nomeEntrada[14];
+	
+
+    for(int i = 0; i < quantidade_clientes; i++){
+
+        //cout << "Solicitacoes: " << mensagem.size() << endl;
+        sprintf(nomeEntrada, "entrada%.2i.txt", i+1);
+
+        //cout << "Nome: " << nomeEntrada << endl;
+
+        mensagem = LerArquivo(nomeEntrada);
+        
+        //cout << "Solicitacoes: " << mensagem.size() << endl;
+        
+        sprintf(nome, "saida%.2i.txt", i+1);
+
+          
+        //cout << "Nome do arquivo: " << arquivototal << endl;
+
+        //Vai ser processado pelo cliente 2
+        arquivo_saida = fopen(nome, "w");
+        fclose(arquivo_saida);
+        
+        fflush(stdin);
+
+        for (int i = 0; i < mensagem.size(); i++){
+            // formato de abertura ele tem que atender, se nao existir, cria e escreve, se existir escreve no final;
+            fflush(stdin);
+            CriarArquivoSaida(mensagem[i], nome);
+        }
+
+        
+
+        mensagem.clear();
+    }
+    
+    
+
+
+
+
+    
+    /*
     vector <Cliente> tdsClientes;
     Cliente auxiliarCliente;
     Mensagem auxiliarMensagem;
@@ -70,6 +120,7 @@
         }
         cout << endl;
     }
-}*/
+    */
+}
 
 

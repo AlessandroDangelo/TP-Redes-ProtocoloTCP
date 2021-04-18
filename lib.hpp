@@ -34,7 +34,11 @@ struct Servidor {
 
 void CriarArquivoEntrada(int qtd_clientes);
 
-void CriarArquivoSaida(vector <Mensagem> mensagem);
+void CriarArquivoSaida(Mensagem mensagem, char arquivototal[14] );
+
+vector <Mensagem> LerArquivo(char arquivototal[14] );
+
+//-------------------------------------------------- processos ----------------------------------------------------------
 
 int ContadorVogal(Mensagem solicitacao);
 
@@ -42,11 +46,9 @@ int ContadorConsoante(Mensagem solicitacao);
 
 int ContadorNmr(Mensagem solicitacao);
 
-vector <Mensagem> LerArquivo();
+//-------------------------------------------------- menu ----------------------------------------------------------
 
-//-------------------------------------------------- Servidor ----------------------------------------------------------
-
-//void menu(int quantidade_clientes);
+void menu(int quantidade_clientes);
 
 //-------------------------------------------------- Servidor ----------------------------------------------------------
 
@@ -57,3 +59,42 @@ vector <Mensagem> LerArquivo();
 
 
 #endif
+
+/*
+vector <Mensagem> LerArquivo(char arquivototal[14] ){
+    char caractere;
+    vector <Mensagem> mensagens;
+    FILE *arquivo;    
+
+    arquivo = fopen(arquivototal, "r");
+    vector <int> aux;
+    Mensagem aux_2;
+    int tamanho;
+    int numero;
+    int verificacao = 1;
+    
+    fscanf(arquivo, "%d", &tamanho);
+    while(!feof(arquivo) ){
+        caractere = fgetc(arquivo);
+        if (caractere == '\n'){
+            if(verificacao != 1){
+                mensagens.push_back(aux_2);
+                
+                aux_2.mensagem.clear();
+            }else{
+                verificacao++;
+            }
+            
+        }else{
+            numero = static_cast<char>(caractere);
+            aux_2.mensagem.push_back(numero);
+            //cout << caractere << endl;
+            //cout << numero << endl;
+        }
+    }
+    fclose(arquivo);
+
+    return mensagens;
+}
+
+*/
